@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Maafin Aku Ya Sayang ❤️</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .container {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    .card {
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      text-align: center;
+      max-width: 650px;
+      animation: fadeIn 2s ease;
+      position: relative;
+    }
+    h1 {
+      color: #ff4b5c;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+    p {
+      color: #444;
+      font-size: 18px;
+      line-height: 1.7;
+      text-align: justify;
+    }
+    .love {
+      font-size: 50px;
+      color: #ff4b5c;
+      animation: pulse 1.2s infinite;
+      margin-bottom: 10px;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      background: #ff4b5c;
+      color: white;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      position: relative;
+    }
+    .btn:hover {
+      background: #e84354;
+      transform: scale(1.1);
+    }
+    .buttons {
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-around;
+      position: relative;
+    }
+    .bubble {
+      position: fixed;
+      bottom: -50px;
+      font-size: 25px;
+      animation: rise 8s infinite;
+      color: #ff4b5c;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+    @keyframes rise {
+      0% { transform: translateY(0) scale(1); opacity: 0.7; }
+      100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="love">💕</div>
+      <h1>Lathifah Lutphia, Sayangkuu... Maafin Aku 😭</h1>
+      <p>
+        Sayang manisku, cintaku, bubugku Lathifah Lutphia 💕,<br><br>
+
+        Aku sadar banget kalau aku salah, aku nyesel banget bikin kamu ngambek.  
+        Kamu itu cahaya aku, kamu itu semangat aku, dan kamu itu alasan kenapa aku bisa tersenyum setiap hari.  
+        Kalau kamu marah, rasanya dunia jadi abu-abu, kayak nasi goreng tanpa kecap, kayak mie instan tanpa bumbu, kayak HP tanpa kuota 😭.  
+
+        Aku janji sayang, aku bakal lebih sabar, lebih perhatian, lebih manis, dan lebih bikin kamu bahagia.  
+        Aku nggak akan biarin air mata kamu turun gara-gara aku lagi.  
+        Karena tiap kali aku lihat kamu sedih, hatiku hancur berkeping-keping 💔.  
+
+        Kamu itu oksigen hidupku, kamu itu wifi cintaku.  
+        Tanpa kamu, aku kayak hape tanpa sinyal, kayak laptop lowbat nggak ada charger, kayak kucing tanpa meong 🐱.  
+
+        Jadi plis ya Lathifah Lutphia cintaku, maafin aku.  
+        Aku sayang kamu bukan cuma hari ini, bukan cuma besok, tapi selamanya.  
+        Kamu itu rumahku, peluk terhangatku, tempat aku selalu ingin kembali.  
+
+        Aku cinta kamu 3000 kali lipat, bahkan kalau ada angka lebih besar dari itu, aku pilih angka itu buat cintaku ke kamu ❤️.  
+
+        Jangan lama-lama ngambeknya ya, soalnya aku kangen banget sama senyum kamu yang manis itu 😘.  
+        Aku butuh kamu, Lathifah Lutphia sayangku selamanya 💕.  
+
+        Pokoknya intinya: aku nggak bisa hidup tanpa kamu. Kalau kamu nggak maafin aku, dunia ini hambar.  
+        Jadi plis banget, kasih aku kesempatan buat selalu bikin kamu bahagia, sayangku satu-satunya 😭❤️.
+      </p>
+      <div class="buttons">
+        <button class="btn" onclick="alert('Yeeeyyy!!! Makasih udah maafin aku 😘❤️')">Dimaafin ✅</button>
+        <button id="noBtn" class="btn">Enggak ❌</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- gelembung hati lucu -->
+  <script>
+    function createBubble() {
+      const bubble = document.createElement("div");
+      bubble.classList.add("bubble");
+      bubble.style.left = Math.random() * 100 + "vw";
+      bubble.innerHTML = "💖";
+      document.body.appendChild(bubble);
+
+      setTimeout(() => {
+        bubble.remove();
+      }, 8000);
+    }
+    setInterval(createBubble, 800);
+
+    // tombol "enggak" kabur terus menerus
+    const noBtn = document.getElementById("noBtn");
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - noBtn.clientWidth - 20);
+      const y = Math.random() * (window.innerHeight - noBtn.clientHeight - 20);
+      noBtn.style.position = "absolute";
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+  </script>
+</body>
+</html>
